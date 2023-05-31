@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activity.TambahActivity">
+
+    <TextView
+        android:layout_marginTop="90dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tambah Data Novel"
+        android:textStyle="bold"
+        android:textSize="28sp"
+        android:textColor="@color/black"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        android:layout_marginBottom="32dp"
+        />
+
+    <EditText
+        android:id="@+id/et_nama"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:textSize="21sp"
+        android:layout_marginHorizontal="10dp"
+        android:background="@color/black"
+        android:textColor="@color/white"
+        android:hint="   Nama Buku"
+        android:textColorHint="@color/white"/>
+
+    <EditText
+        android:id="@+id/et_penulis"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:textSize="21sp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="6dp"
+        android:background="@color/black"
+        android:textColor="@color/white"
+        android:hint="   Penulis"
+        android:textColorHint="@color/white"/>
+
+    <EditText
+        android:id="@+id/et_halaman"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:textSize="21sp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="6dp"
+        android:background="@color/black"
+        android:textColor="@color/white"
+        android:hint="   Halaman"
+        android:textColorHint="@color/white" />
+
+    <EditText
+        android:id="@+id/et_tahun"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:textSize="21sp"
+        android:layout_marginHorizontal="10dp"
+        android:background="@color/black"
+        android:textColor="@color/white"
+        android:layout_marginTop="6dp"
+        android:hint="   Tahun"
+        android:textColorHint="@color/white"/>
+
+    <EditText
+        android:id="@+id/et_penerbit"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:textSize="21sp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="6dp"
+        android:background="@color/black"
+        android:textColor="@color/white"
+        android:hint="   Penerbit"
+        android:textColorHint="@color/white"/>
+
+    <Button
+        android:id="@+id/btn_simpan"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginTop="16dp"
+        android:text="Simpan"
+        android:textSize="21sp"
+        android:layout_marginHorizontal="3dp"/>
+
+</LinearLayout>
