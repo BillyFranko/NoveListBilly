@@ -79,6 +79,18 @@
         android:hint="   Penerbit"
         android:textColorHint="@color/white"/>
 
+    <EditText
+        android:id="@+id/et_sinopsis"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:textSize="21sp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="6dp"
+        android:background="@color/black"
+        android:textColor="@color/white"
+        android:hint="   Sinopsis"
+        android:textColorHint="@color/white"/>
+
     <Button
         android:id="@+id/btn_ubah"
         android:layout_width="match_parent"

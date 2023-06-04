@@ -12,11 +12,29 @@
         android:layout_margin="6dp"
         android:orientation="vertical">
 
+        <Button
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="back" />
+
+        <TextView
+            android:id="@+id/about"
+            style="@style/TextAppearance.AppCompat.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="About Book"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="20dp"
+            android:padding="6dp"/>
+
         <TextView
             android:id="@+id/tv_nama"
             style="@style/TextAppearance.AppCompat.Medium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
             android:text="Nama"
             android:padding="6dp"/>
         <TextView
@@ -24,6 +42,7 @@
             style="@style/TextAppearance.AppCompat.Medium"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
             android:text="Penulis"
             android:padding="6dp" />
         <TextView
@@ -31,6 +50,7 @@
             style="@style/TextAppearance.AppCompat.Medium"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
             android:text="Halaman"
             android:padding="6dp" />
 
@@ -39,14 +59,35 @@
             style="@style/TextAppearance.AppCompat.Medium"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
             android:text="Tahun"
             android:padding="6dp" />
+
         <TextView
             android:id="@+id/tv_penerbit"
             style="@style/TextAppearance.AppCompat.Medium"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
             android:text="Penerbit"
+            android:padding="6dp" />
+
+        <TextView
+            android:id="@+id/tv_snop"
+            style="@style/TextAppearance.AppCompat.Medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="Sinopsis :"
+            android:padding="6dp" />
+
+        <TextView
+            android:id="@+id/tv_sinopsis"
+            style="@style/TextAppearance.AppCompat.Medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="Sinopsis"
             android:padding="6dp" />
 
 

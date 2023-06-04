@@ -58,6 +58,16 @@
             android:text="Penerbit"
             android:textSize="21sp"
             />
+
+        <TextView
+            android:id="@+id/tv_sinopsis"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="sinopsis"
+            android:textSize="17sp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            />
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.billyf.novelistbillyf.API.APIRequestData;
 import com.billyf.novelistbillyf.API.RetroServer;
+import com.billyf.novelistbillyf.Activity.DetailActivity;
 import com.billyf.novelistbillyf.Activity.MainActivity;
 import com.billyf.novelistbillyf.Activity.UbahActivity;
 import com.billyf.novelistbillyf.Model.ModelNovel;
@@ -54,6 +55,29 @@ public class AdapterNovel extends RecyclerView.Adapter<AdapterNovel.VHNovel>{
         holder.tvHalaman.setText(MN.getHalaman());
         holder.tvTahun.setText(MN.getTahun());
         holder.tvPenerbit.setText(MN.getPenerbit());
+        holder.tvSinopsis.setText(MN.getSinopsis());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String nama = MN.getNama();
+                String penulis = MN.getPenulis();
+                String halaman = MN.getHalaman();
+                String tahun = MN.getTahun();
+                String penerbit = MN.getPenerbit();
+                String sinopsis = MN.getSinopsis();
+
+                Intent intent = new Intent(holder.itemView.getContext(), DetailActivity.class);
+                intent.putExtra("varnama", nama);
+                intent.putExtra("varpenulis", penulis);
+                intent.putExtra("varhalaman", halaman);
+                intent.putExtra("vartahun", tahun);
+                intent.putExtra("varpenerbit", penerbit);
+                intent.putExtra("varsinopsis", sinopsis);
+
+                holder.itemView.getContext().startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -62,7 +86,7 @@ public class AdapterNovel extends RecyclerView.Adapter<AdapterNovel.VHNovel>{
     }
 
     public class VHNovel extends RecyclerView.ViewHolder {
-        TextView tvId, tvNama, tvPenulis, tvHalaman, tvTahun, tvPenerbit;
+        TextView tvId, tvNama, tvPenulis, tvHalaman, tvTahun, tvPenerbit, tvSinopsis;
 
         public VHNovel(@NonNull View itemView) {
             super(itemView);
@@ -72,6 +96,7 @@ public class AdapterNovel extends RecyclerView.Adapter<AdapterNovel.VHNovel>{
             tvHalaman = itemView.findViewById(R.id.tv_halaman);
             tvTahun = itemView.findViewById(R.id.tv_tahun);
             tvPenerbit = itemView.findViewById(R.id.tv_penerbit);
+            tvSinopsis = itemView.findViewById(R.id.tv_sinopsis);
 
             itemView.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
@@ -99,6 +124,7 @@ public class AdapterNovel extends RecyclerView.Adapter<AdapterNovel.VHNovel>{
                             pindah.putExtra("xHalaman", tvHalaman.getText().toString());
                             pindah.putExtra("xTahun", tvTahun.getText().toString());
                             pindah.putExtra("xPenerbit", tvPenerbit.getText().toString());
+                            pindah.putExtra("xSinopsis", tvSinopsis.getText().toString());
                             ctx.startActivity(pindah);
                         }
                     });

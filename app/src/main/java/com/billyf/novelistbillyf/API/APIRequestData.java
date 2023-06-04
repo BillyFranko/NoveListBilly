@@ -21,7 +21,8 @@ public interface APIRequestData {
             @Field("penulis") String penulis,
             @Field("halaman") String halaman,
             @Field("tahun") String tahun,
-            @Field("penerbit") String penerbit
+            @Field("penerbit") String penerbit,
+            @Field("sinopsis") String sinopsis
     );
 
     @FormUrlEncoded
@@ -32,7 +33,8 @@ public interface APIRequestData {
             @Field("penulis") String penulis,
             @Field("halaman") String halaman,
             @Field("tahun") String tahun,
-            @Field("penerbit") String penerbit
+            @Field("penerbit") String penerbit,
+            @Field("sinopsis") String sinopsis
     );
 
     @FormUrlEncoded

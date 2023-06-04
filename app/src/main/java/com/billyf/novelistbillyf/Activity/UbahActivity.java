@@ -20,10 +20,10 @@ import retrofit2.Response;
 
 public class UbahActivity extends AppCompatActivity {
 
-    private String yId, yNama, yPenulis, yHalaman, yTahun, yPenerbit;
+    private String yId, yNama, yPenulis, yHalaman, yTahun, yPenerbit,ySinopsis;
     private Button btnubah;
-    private EditText etNama, etPenulis, etHalaman, etTahun, etPenerbit;
-    private String nama,penulis,halaman,tahun,penerbit;
+    private EditText etNama, etPenulis, etHalaman, etTahun, etPenerbit,etSinopsis;
+    private String nama,penulis,halaman,tahun,penerbit,sinopsis;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,18 +37,22 @@ public class UbahActivity extends AppCompatActivity {
         yHalaman = ambil.getStringExtra("xHalaman");
         yTahun = ambil.getStringExtra("xTahun");
         yPenerbit = ambil.getStringExtra("xPenerbit");
+        ySinopsis = ambil.getStringExtra("xSinopsis");
 
         etNama = findViewById(R.id.et_nama);
         etPenulis = findViewById(R.id.et_penulis);
         etHalaman = findViewById(R.id.et_halaman);
         etTahun = findViewById(R.id.et_tahun);
         etPenerbit = findViewById(R.id.et_penerbit);
+        etSinopsis = findViewById(R.id.et_sinopsis);
+        btnubah =findViewById(R.id.btn_ubah);
 
         etNama.setText(yNama);
         etPenulis.setText(yPenulis);
         etHalaman.setText(yHalaman);
         etTahun.setText(yTahun);
         etPenerbit.setText(yPenerbit);
+        etSinopsis.setText(ySinopsis);
 
         btnubah.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,21 +62,22 @@ public class UbahActivity extends AppCompatActivity {
                 halaman = etHalaman.getText().toString();
                 tahun = etTahun.getText().toString();
                 penerbit = etPenerbit.getText().toString();
+                sinopsis =etSinopsis.getText().toString();
 
                 if(nama.trim().isEmpty()){
                     etNama.setError("Nama tak boleh kosong");
                 }
                 else if (penulis.trim().isEmpty()){
-                    etPenulis.setError("Asal tidak boleh kosong");
+                    etPenulis.setError("Penulis tidak boleh kosong");
                 }
                 else if (halaman.trim().isEmpty()){
-                    etHalaman.setError("Deskripsi singkat tidak boleh kosong");
+                    etHalaman.setError("Halaman tidak boleh kosong");
                 }
                 else if (tahun.trim().isEmpty()){
-                    etTahun.setError("Asal tidak boleh kosong");
+                    etTahun.setError("tahun boleh kosong");
                 }
                 else if (penerbit.trim().isEmpty()){
-                    etPenerbit.setError("Deskripsi singkat tidak boleh kosong");
+                    etPenerbit.setError("Penerbit tidak boleh kosong");
                 }
                 else {
                     ubahNovel();
@@ -84,7 +89,7 @@ public class UbahActivity extends AppCompatActivity {
 
     private void ubahNovel(){
         APIRequestData ARD = RetroServer.konekRetrofit().create(APIRequestData.class);
-        Call<ModelResponse> proses = ARD.ardUpdate(yId,nama,penulis,halaman,tahun,penerbit);
+        Call<ModelResponse> proses = ARD.ardUpdate(yId,nama,penulis,halaman,tahun,penerbit,sinopsis);
 
         proses.enqueue(new Callback<ModelResponse>() {
             @Override
@@ -92,7 +97,7 @@ public class UbahActivity extends AppCompatActivity {
                 String kode = response.body().getKode();
                 String pesan = response.body().getPesan();
 
-                Toast.makeText(UbahActivity.this, "Kode : "+kode+"Pesan : " + pesan
+                Toast.makeText(UbahActivity.this, "Kode : " + kode + "Pesan : " + pesan
                         , Toast.LENGTH_SHORT).show();
                 finish();
             }

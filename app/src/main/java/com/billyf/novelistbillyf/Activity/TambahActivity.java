@@ -19,9 +19,9 @@ import retrofit2.Response;
 
 public class TambahActivity extends AppCompatActivity {
 
-    private EditText etNama, etPenulis, etHalaman, etTahun, etPenerbit;
+    private EditText etNama, etPenulis, etHalaman, etTahun, etPenerbit, etSinopsis;
     private Button btnSimpan;
-    private String nama,penulis,penerbit,halaman, tahun;
+    private String nama,penulis,penerbit,halaman, tahun, sinopsis;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +33,7 @@ public class TambahActivity extends AppCompatActivity {
         etHalaman = findViewById(R.id.et_halaman);
         etTahun = findViewById(R.id.et_tahun);
         etPenerbit = findViewById(R.id.et_penerbit);
+        etSinopsis = findViewById(R.id.et_sinopsis);
         btnSimpan = findViewById(R.id.btn_simpan);
 
         btnSimpan.setOnClickListener(new View.OnClickListener() {
@@ -43,6 +44,7 @@ public class TambahActivity extends AppCompatActivity {
                 halaman = etHalaman.getText().toString();
                 tahun = etTahun.getText().toString();
                 penerbit = etPenerbit.getText().toString();
+                sinopsis = etSinopsis.getText().toString();
 
                 if(nama.trim().isEmpty()){
                     etNama.setError("Nama tak boleh kosong");
@@ -59,6 +61,9 @@ public class TambahActivity extends AppCompatActivity {
                 else if (penerbit.trim().isEmpty()){
                     etPenerbit.setError("Penerbit tidak boleh kosong");
                 }
+                else if (sinopsis.trim().isEmpty()){
+                    etSinopsis.setError("Penerbit tidak boleh kosong");
+                }
                 else {
                     tambahnovel();
                 }
@@ -69,7 +74,7 @@ public class TambahActivity extends AppCompatActivity {
 
     private void tambahnovel(){
         APIRequestData ARD = RetroServer.konekRetrofit().create(APIRequestData.class);
-        Call<ModelResponse> proses = ARD.ardCreate(nama,penulis,halaman,tahun,penerbit);
+        Call<ModelResponse> proses = ARD.ardCreate(nama,penulis,halaman,tahun,penerbit,sinopsis);
 
         proses.enqueue(new Callback<ModelResponse>() {
             @Override
