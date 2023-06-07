@@ -33,6 +33,7 @@
             android:layout_height="wrap_content"
             android:text="Penulis"
             android:textSize="21sp"
+            android:visibility="gone"
             />
 
         <TextView
@@ -41,6 +42,7 @@
             android:layout_height="wrap_content"
             android:text="Halaman"
             android:textSize="21sp"
+            android:visibility="gone"
             />
 
         <TextView
@@ -49,6 +51,7 @@
             android:layout_height="wrap_content"
             android:text="Tahun"
             android:textSize="21sp"
+            android:visibility="gone"
             />
 
         <TextView
@@ -57,6 +60,7 @@
             android:layout_height="wrap_content"
             android:text="Penerbit"
             android:textSize="21sp"
+            android:visibility="gone"
             />
 
         <TextView
