@@ -49,8 +49,8 @@ public class AdapterNovel extends RecyclerView.Adapter<AdapterNovel.VHNovel>{
     public void onBindViewHolder(@NonNull VHNovel holder, int position) {
         ModelNovel MN = ListNovel.get(position);
 
-        holder.tvId.setText(MN.getId());
-        holder.tvNama.setText(MN.getNama());
+        holder.tvId.setText( MN.getId());
+        holder.tvNama.setText( MN.getNama());
         holder.tvPenulis.setText(MN.getPenulis());
         holder.tvHalaman.setText(MN.getHalaman());
         holder.tvTahun.setText(MN.getTahun());

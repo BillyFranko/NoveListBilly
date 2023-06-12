@@ -21,7 +21,7 @@ import retrofit2.Response;
 public class UbahActivity extends AppCompatActivity {
 
     private String yId, yNama, yPenulis, yHalaman, yTahun, yPenerbit,ySinopsis;
-    private Button btnubah;
+    private Button btnubah, btnback;
     private EditText etNama, etPenulis, etHalaman, etTahun, etPenerbit,etSinopsis;
     private String nama,penulis,halaman,tahun,penerbit,sinopsis;
 
@@ -29,6 +29,14 @@ public class UbahActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ubah);
+
+        btnback = findViewById(R.id.btn_back);
+        btnback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(UbahActivity.this, MainActivity.class));
+            }
+        });
 
         Intent ambil = getIntent();
         yId = ambil.getStringExtra("xId");

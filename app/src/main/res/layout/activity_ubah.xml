@@ -4,11 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bgtambahubah4"
     android:orientation="vertical"
     tools:context=".Activity.UbahActivity">
 
+    <Button
+        android:id="@+id/btn_back"
+        android:layout_width="90dp"
+        android:layout_height="wrap_content"
+        android:text="back"
+        android:layout_marginLeft="15dp"/>
+
     <TextView
-        android:layout_marginTop="90dp"
+        android:layout_marginTop="50dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Ubah Data Novel"
@@ -28,7 +36,10 @@
         android:layout_marginHorizontal="10dp"
         android:background="@color/black"
         android:textColor="@color/white"
-        android:hint="   Nama Buku"
+        android:paddingLeft="10dp"
+        android:drawableLeft="@drawable/baselinebook"
+        android:drawableTint="@color/white"
+        android:hint="  Nama Buku"
         android:textColorHint="@color/white"/>
 
     <EditText
@@ -37,10 +48,13 @@
         android:layout_height="48dp"
         android:textSize="21sp"
         android:layout_marginHorizontal="10dp"
-        android:layout_marginTop="6dp"
+        android:layout_marginTop="18dp"
         android:background="@color/black"
         android:textColor="@color/white"
-        android:hint="   Penulis"
+        android:paddingLeft="10dp"
+        android:drawableLeft="@drawable/baselinepenulis"
+        android:drawableTint="@color/white"
+        android:hint="  Penulis"
         android:textColorHint="@color/white"/>
 
     <EditText
@@ -49,10 +63,13 @@
         android:layout_height="48dp"
         android:textSize="21sp"
         android:layout_marginHorizontal="10dp"
-        android:layout_marginTop="6dp"
+        android:layout_marginTop="18dp"
         android:background="@color/black"
         android:textColor="@color/white"
-        android:hint="   Halaman"
+        android:paddingLeft="10dp"
+        android:drawableLeft="@drawable/fotohalaman2"
+        android:drawableTint="@color/white"
+        android:hint="  Halaman"
         android:textColorHint="@color/white" />
 
     <EditText
@@ -63,8 +80,11 @@
         android:layout_marginHorizontal="10dp"
         android:background="@color/black"
         android:textColor="@color/white"
-        android:layout_marginTop="6dp"
-        android:hint="   Tahun"
+        android:layout_marginTop="18dp"
+        android:paddingLeft="10dp"
+        android:drawableLeft="@drawable/baselinecalendar"
+        android:drawableTint="@color/white"
+        android:hint="  Tahun"
         android:textColorHint="@color/white"/>
 
     <EditText
@@ -73,22 +93,28 @@
         android:layout_height="48dp"
         android:textSize="21sp"
         android:layout_marginHorizontal="10dp"
-        android:layout_marginTop="6dp"
+        android:layout_marginTop="18dp"
         android:background="@color/black"
         android:textColor="@color/white"
-        android:hint="   Penerbit"
+        android:paddingLeft="10dp"
+        android:drawableLeft="@drawable/baselinepublish"
+        android:drawableTint="@color/white"
+        android:hint="  Penerbit"
         android:textColorHint="@color/white"/>
 
     <EditText
         android:id="@+id/et_sinopsis"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
+        android:layout_height="120dp"
         android:textSize="21sp"
         android:layout_marginHorizontal="10dp"
-        android:layout_marginTop="6dp"
+        android:layout_marginTop="18dp"
         android:background="@color/black"
         android:textColor="@color/white"
-        android:hint="   Sinopsis"
+        android:paddingLeft="10dp"
+        android:drawableLeft="@drawable/baselinesinopsis"
+        android:drawableTint="@color/white"
+        android:hint="  Sinopsis"
         android:textColorHint="@color/white"/>
 
     <Button

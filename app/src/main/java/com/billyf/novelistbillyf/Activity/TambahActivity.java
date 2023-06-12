@@ -2,6 +2,7 @@ package com.billyf.novelistbillyf.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -20,13 +21,21 @@ import retrofit2.Response;
 public class TambahActivity extends AppCompatActivity {
 
     private EditText etNama, etPenulis, etHalaman, etTahun, etPenerbit, etSinopsis;
-    private Button btnSimpan;
+    private Button btnSimpan, btnback;
     private String nama,penulis,penerbit,halaman, tahun, sinopsis;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tambah);
+
+        btnback = findViewById(R.id.btn_back);
+        btnback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(TambahActivity.this, MainActivity.class));
+            }
+        });
 
         etNama = findViewById(R.id.et_nama);
         etPenulis = findViewById(R.id.et_penulis);
